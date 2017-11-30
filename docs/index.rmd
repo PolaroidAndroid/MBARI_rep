@@ -92,7 +92,7 @@ ggplot(mpg, aes(x = cty, y = hwy, size = class)) +
 
 ```{r multiple geom}
  ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point(aes( color = hwy > 20)) +
+  geom_point(color = "blue") +
   geom_smooth(method = "lm") +
   geom_smooth(method = "loess", color = "red") +
   ggtitle("Scatter plot") +
