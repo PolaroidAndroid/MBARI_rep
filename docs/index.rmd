@@ -108,6 +108,43 @@ ggplot(mpg, aes(x = cty, y = hwy, size = class)) +
 ```
 
 
+## Data Wrangling with `dplyr`
+
+```{r 1}
+gapminder <- read_csv("https://raw.githubusercontent.com/OHI-Science/data-science-training/master/data/gapminder.csv")
+
+head(gapminder, 10)
+tail(gapminder)
+str(gapminder)
+names(gapminder)
+dim(gapminder)
+ncol(gapminder)
+summary(gapminder)
+
+```
+
+
+```{r 2}
+filter(gapminder,lifeExp < 29)
+
+filter(gapminder, country == "Mexico")
+
+mean(filter(gapminder, country=="Sweden")$lifeExp)
+
+gapminder %>% head()
+
+
+g <- filter(gapminder, country=="Sweden")
+mean(g)
+
+gapminder  %>%  
+  filter(country == "Sweden")  %>% 
+  summarize(mean_lifeExp = mean(lifeExp))
+```
+
+
+
+
 
 
 
