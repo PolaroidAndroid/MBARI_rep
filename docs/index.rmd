@@ -7,9 +7,6 @@ output:
     code_folding: hide
     toc: true
     toc_float: true
-    
-    
-    
 ---
 
 
@@ -27,18 +24,37 @@ library(tidyverse)
 ```{r scatterplot}
 data(mpg)
 
-g <- ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point()
-g
+g <- ggplot(mpg, aes(x = displ, y = hwy))
+g + geom_point()
+
 ```
 
-## Colors
+## `colors`
 
+```{r colors}
+g <- ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point()
+g
 
+```
+  
+## Convert `colors` to `shape`
+  
+```{r b&w}
+g <- ggplot(mpg, aes(x = displ, y = hwy, shape = class)) + 
+  geom_point()
+g
 
+```
 
+## Shape Size
 
+```{r shape size}
+g <- ggplot(mpg, aes(x = displ, y = hwy, shape = class)) + 
+  geom_point()
+g
 
+```
 
 
 
