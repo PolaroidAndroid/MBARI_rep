@@ -50,11 +50,39 @@ g
 ## Shape Size
 
 ```{r shape size}
-g <- ggplot(mpg, aes(x = displ, y = hwy, shape = class)) + 
-  geom_point()
-g
+ggplot(mpg, aes(x = cty, y = hwy, size = class , color = fl)) + 
+  geom_point(alpha = .4)
 
 ```
+
+
+
+
+```{r color 2}
+ggplot(mpg, aes(x = cty, y = hwy, size = class)) + 
+  geom_point(alpha = .4, color = "blue")
+
+```
+
+
+
+```{r color 3}
+ ggplot(data = mpg) + 
+      geom_point(aes(x = displ, y = hwy), color = "blue")
+
+```
+
+```{r continue variable}
+ ggplot(mpg, aes(x = displ, y = hwy, color = cty)) + 
+      geom_point()
+
+```
+
+```{r subset}
+ ggplot(mpg, aes(x = displ, y = hwy, color = displ < 5)) + 
+      geom_point()
+```
+
 
 
 
