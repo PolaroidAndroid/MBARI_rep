@@ -84,5 +84,30 @@ ggplot(mpg, aes(x = cty, y = hwy, size = class)) +
 ```
 
 
+```{r geom_examples}
+ ggplot(mpg, aes(x = drv, y = hwy)) + 
+      geom_boxplot()
+```
+
+
+```{r multiple geom}
+ ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(aes( color = hwy > 20)) +
+  geom_smooth(method = "lm") +
+  geom_smooth(method = "loess", color = "red") +
+  ggtitle("Scatter plot") +
+  xlab("Engine Displacement") +
+  ylab("Highway") +
+  theme_bw()+
+  theme(text = element_text(size = 8),line = element_line(size = .4))+
+  facet_wrap(~factor(class), scales = "free")
+  
+  
+  
+  
+```
+
+
+
 
 
